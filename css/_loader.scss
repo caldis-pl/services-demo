@@ -1,0 +1,43 @@
+.loader {
+    &.loader-fixed {
+        position: fixed;
+        top: 0;
+        bottom: 0;
+        right: 0;
+        left: 0;
+        z-index: 1071;
+        display: none;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .spinner-border {
+        color: var(--bs-primary);
+        height: 3rem;
+        width: 3rem;
+        font-size: 24px;
+        animation-duration: 1s;
+    }
+}
+
+.loader-backdrop {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    z-index: 1070;
+    background: black;
+    opacity: 0.1;
+    display: none;
+}
+
+body.loading {
+    .loader {
+        display: flex;
+    }
+
+    .loader-backdrop {
+        display: block;
+    }
+}

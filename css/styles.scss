@@ -1,0 +1,121 @@
+@import "loader";
+@import "alert";
+@import "buttons";
+@import "calendar";
+@import "article";
+@import "appointments";
+@import "services";
+
+:root {
+    --bs-primary: #691C9A;
+    --bs-primary-lightest: #ebd7f8;
+    --bs-primary-rgb: 105, 28, 154;
+
+    --bs-secondary: #6fb815;
+    --bs-secondary-lighter: #78c618;
+
+    --btn-primary-hover-bg: #7820b0;
+
+    --header-size: 72px;
+}
+
+body {
+    margin-top: var(--header-size);
+}
+
+a {
+    text-decoration: none;
+}
+
+h1 {
+    margin: 1.5rem 0 1rem;
+    font-size: 40px;
+    font-weight: bold;
+  }
+  
+  @media (max-width: 1199px) {
+    h1 {
+      font-size: 30px;
+    }
+  }
+  h2 {
+    margin: 1rem 0;
+    font-size: 24px;
+    font-weight: bold;
+  }
+  
+  h3 {
+    margin: 1rem 0 1em;
+    font-size: 1.5rem;
+    font-weight: bold;
+  }
+
+
+
+input[readonly],
+input[readonly]:focus {
+    background: #e9ecef;
+}
+.form-floating>.form-control~label::after {
+  background-color: transparent !important;
+}
+
+span.field-validation-error, span.custom-field-validation-error {
+    font-size: .75rem;
+    color: var(--bs-danger);
+    vertical-align: text-top;
+}
+
+
+.img-fixed-ratio {
+    display: block;
+    width: 100%;
+    height: auto;
+    position: relative;
+    overflow: hidden;
+
+    &.img-fixed-ratio-4-3 {
+        padding-bottom: 75%; /* 4:3 aspect ratio (3 / 4 * 100) */
+    }
+
+    img {
+        display: block;
+        max-width: 100%;
+        max-height: 100%;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+    }
+}
+
+
+ul.open-hours-list {
+    padding: 0;
+
+    li {
+        padding-bottom: .375rem;
+
+        .right {
+            margin-left: auto;
+            font-weight: 600;
+        }
+    }
+}
+
+
+.text-gray-600 {
+    color: var(--bs-gray-600);
+}
+
+.text-gray-700 {
+    color: var(--bs-gray-700);
+}
+
+.cursor-pointer {
+    cursor: pointer;
+}
+
+.bg-light {
+    background: var(--bs-primary-lightest) !important;
+}

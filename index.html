@@ -1,0 +1,468 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CALDIS - przykładowa integracja</title>
+    <!-- Include Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/styles.css" rel="stylesheet">
+</head>
+
+<body>
+    <div id="alerts" class="d-print-none"></div>
+    <div class="loader loader-fixed" data-loader="">
+        <div class="spinner-border" role="status">
+            <span class="visually-hidden">Loading...</span>
+        </div>
+    </div>
+    <div class="loader-backdrop" data-loader=""></div>
+
+    <nav class="navbar navbar-expand-lg bg-primary fixed-top" data-bs-theme="dark">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#">API DEMO</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown"
+                aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNavDropdown">
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="#">Strona główna</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Galeria</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Kontakt</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container">
+        <div class="article-header">
+            <div class="row">
+                <div class="col-xl-8 d-flex position-relative">
+                    <div class="image-wrapper-bg">
+                        <div class="image-wrapper">
+                            <img class="img-fluid" src="/img/main-image.webp" alt="Salon fryzjerski - demo ">
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xl-4 d-flex flex-column justify-content-center">
+
+
+                    <h1>CALDIS API demo</h1>
+                    <p>
+                        Przykładowa zakład fryzjerski
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="container mt-5">
+        <div class="row">
+            <div class="col-lg-8">
+                <div id="serviceGroups" class="service-groups">
+
+
+                </div>
+            </div>
+
+
+            <div class="col-lg-4">
+                <div class="bg-light border border-primary p-3 mb-3">
+                    <h2 class="m-0 mb-2">
+                        Kontakt
+                    </h2>
+
+                    <ul class="contact-list m-0">
+                        <li>
+                            <a href="tel:000000000">
+                                <i class="bi-phone-fill"></i> 000-000-000
+                            </a>
+                        </li>
+                        <li>
+                            <a href="mailto:email@test.pl">
+                                <i class="bi-envelope-fill"></i> email@test.pl
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="bg-light border border-primary p-3 mb-3">
+
+                    <h2 class="m-0 mb-2">
+                        Godziny otwarcia
+                    </h2>
+                    <ul class="open-hours-list m-0">
+                        <li class="d-flex">
+                            <div class="left">
+                                poniedziałek
+                            </div>
+                            <div class="right">
+                                09:00 - 18:00
+                            </div>
+                        </li>
+                        <li class="d-flex">
+                            <div class="left">
+                                wtorek
+                            </div>
+                            <div class="right">
+                                09:00 - 18:00
+                            </div>
+                        </li>
+                        <li class="d-flex">
+                            <div class="left">
+                                środa
+                            </div>
+                            <div class="right">
+                                09:00 - 18:00
+                            </div>
+                        </li>
+                        <li class="d-flex">
+                            <div class="left">
+                                czwartek
+                            </div>
+                            <div class="right">
+                                09:00 - 18:00
+                            </div>
+                        </li>
+                        <li class="d-flex">
+                            <div class="left">
+                                piątek
+                            </div>
+                            <div class="right">
+                                09:00 - 18:00
+                            </div>
+                        </li>
+                        <li class="d-flex">
+                            <div class="left">
+                                sobota
+                            </div>
+                            <div class="right">
+                                09:00 - 16:00
+                            </div>
+                        </li>
+                        <li class="d-flex">
+                            <div class="left">
+                                niedziela
+                            </div>
+                            <div class="right">
+                                09:00 - 16:00
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="container">
+        <footer class="d-flex flex-wrap justify-content-between align-items-center py-3 my-4 border-top">
+            <p class="col-md-4 mb-0 text-body-secondary">© 2023 CALDIS</p>
+
+            <a href="/"
+                class="col-md-4 d-flex align-items-center justify-content-center mb-3 mb-md-0 me-md-auto link-body-emphasis text-decoration-none">
+                <svg class="bi me-2" width="40" height="32">
+                    <use xlink:href="#bootstrap"></use>
+                </svg>
+            </a>
+
+            <ul class="nav col-md-4 justify-content-end">
+                <li class="nav-item"><a href="#" class="nav-link px-2 text-body-secondary">Strona główna</a></li>
+                <li class="nav-item"><a href="#" class="nav-link px-2 text-body-secondary">Galeria</a></li>
+                <li class="nav-item"><a href="#" class="nav-link px-2 text-body-secondary">Kontakt</a></li>
+            </ul>
+        </footer>
+    </div>
+
+    <script id="modalTemplate" type="text/x-handlebars-template">
+
+        <div id="bookingModal" class="modal fade show" aria-modal="true" role="dialog" style="display: block;" data-bs-keyboard="false" data-bs-backdrop="static">
+            <div class="modal-dialog modal-dialog-centered modal-lg">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h4 class="modal-title">Rezerwacja</h4>
+    
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+    
+                    <div class="modal-body">
+                        <div class="container">
+                            <form id="bookingForm">
+                                <input id="IdObject" name="IdObject" type="hidden" value="{{Id}}">
+
+                                <h2>Wybrana usługa</h2>
+                                <div class="services">
+                                    {{#each Services}}
+                                    <input type="hidden" name="IdServices[{{@index}}]" value="{{this.Id}}"/>
+
+                                    <div class="service-row">
+                                        <div class="row">
+    
+                                            <div class="service-left display-flex align-items-center">
+                                                <div class="text-black">
+                                                    {{this.Name}}
+                                                </div>
+    
+                                            </div>
+                                            <div class="service-right">
+                                                <div class="d-flex align-items-center justify-content-between">
+                                                    <div>
+                                                        <p class="fs-6 fw-600 text-gray-700">
+                                                            {{this.PriceGross}}
+                                                            <span>
+                                                                zł
+                                                            </span>
+                                                        </p>
+                                                        <div>
+                                                            <p class="fs-8 text-gray-600">
+                                                                {{this.DurationTimeInMinutes}}
+                                                                min
+    
+                                                            </p>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    {{/each}}
+                                </div>
+    
+    
+                                <h2 class="mt-3">Wybierz pracownika</h2>
+                                
+                                <div class="select-list-calendars">
+                                    {{#each Calendars}}
+                                        <a class="item" data-calendar-id="{{this.Id}}">
+                                            <div class="icon">
+                                                    <img class="img-fluid m-0" src="https://placehold.co/400x400">
+                                            </div>
+                                            <div class="name">
+                                                {{this.Name}}
+                                            </div>
+                                        </a>
+                                    {{/each}}
+                                </div>
+
+                                <h2 class="mt-3">Wybierz datę</h2>
+                                <div id="calendarContainer" class="calendar">
+                                    
+                                </div>
+
+                                <div id="availableHoursWrapper" class="d-none">
+                                    <h2 class="mt-3">Wybierz godzinę</h2>
+                                    <div id="availableHoursContainer" class="available-terms">
+                                    </div>
+                                </div>
+    
+                                <div id="bookingDetailsWrapper" class="d-none">
+                                    <h2>Twoje dane</h2>
+    
+                                    <div class="mb-3">
+                                        <div class="form-floating">
+                                            <input class="form-control text-box single-line" id="Fullname" name="Fullname" placeholder="Imię i nazwisko" type="text" value="">
+                                            <label for="Fullname">Imię i nazwisko</label>
+                                        </div>
+                                    </div>
+    
+                                    <div class="mb-3">
+                                        <div class="form-floating">
+                                            <input class="form-control text-box single-line" id="Email" name="Email" placeholder="Adres e-mail" type="email" value="">
+                                            <label for="Email">Adres e-mail</label>
+                                        </div>
+                                    </div>
+    
+                                    <div class="mb-3">
+                                        <div class="form-floating">
+                                            <input class="form-control text-box single-line" id="Phone" name="Phone" placeholder="Telefon" type="tel" value="">
+                                            <label for="Phone">Telefon</label>
+                                        </div>
+                                    </div>
+    
+                                    <h2>
+                                        Płatność
+                                    </h2>
+    
+                                    <div class="mb-3">
+                                        <div class="form-floating ">
+                                            <input class="form-control" id="TotalPriceGross" name="TotalPriceGross" readonly="" type="text" value="{{Price.TotalPriceGross}}">
+                                            <label for="TotalPriceGross">Suma brutto</label>
+                                        </div>
+                                    </div>
+    
+                                    <div>
+                                        <div class="form-check">
+                                            <input class="form-check-input check-box" id="AcceptTermsOfService" name="AcceptTermsOfService" type="checkbox" value="true"><input name="AcceptTermsOfService" type="hidden" value="false">
+                                            <label class="form-check-label required">
+                                                Zapoznałem/łam się z
+                                                <a href="https://caldis.pl/pouczenie-o-odstapieniu-od-umowy-swiadczenia-uslug" target="_blank">
+                                                    pouczeniem o prawie odstąpienia od umowy świadczenia usług drogą elektroniczną
+                                                </a>,
+                                                <a href="https://caldis.pl/portal-klienta/regulamin-aplikacji-dla-klientow" target="_blank">
+                                                    regulaminem rezerwacji
+                                                </a>,
+                                                <a href="https://caldis.pl/regulamin" target="_blank">
+                                                    regulaminem serwisu
+                                                </a>
+                                                oraz
+                                                <a href="https://caldis.pl/portal-klienta/regulamin-aplikacji-dla-klientow" target="_blank">
+                                                    regulaminem aplikacji mobilnej
+                                                </a>.
+                                            </label>
+                                        </div>
+                                    </div>
+    
+                                    <div>
+                                        <div class="form-check">
+                                            <input class="form-check-input check-box" id="Agreement1" name="Agreement1" type="checkbox" value="true"><input name="Agreement1" type="hidden" value="false">
+                                            <label class="form-check-label required">
+                                                Zapoznałem się z zasadami ochrony moich danych osobowych zamieszczonymi w
+                                                <a target="_blank" href="https://caldis.pl.pl/polityka-prywatnosci">Polityce prywatności</a>.
+                                            </label>
+                                        </div>
+                                    </div>
+    
+                                    <div>
+                                        <div class="form-check">
+                                            <input class="form-check-input check-box" id="Agreement2" name="Agreement2" type="checkbox" value="true"><input name="Agreement2" type="hidden" value="false">
+                                            <label class="form-check-label required">
+                                                Wyrażam zgodę na wykonanie usługi w pełni. Jestem świadomy, że z chwilą całkowitego spełnienia świadczenia przez usługodawcę stracę prawo do odstąpienia od umowy.
+                                            </label>
+                                        </div>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+    
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-primary" id="submitReservation">Zarezerwuj</button>
+                        <button id="closeModal" type="button" class="btn btn-default" data-bs-dismiss="modal">
+                            Anuluj
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </script>
+
+
+    <script id="bookingCompletedTemplate" type="text/x-handlebars-template">
+        <p>
+            Dziękujemy za dokonanie rezerwacji!
+        </p>
+    </script>
+
+    <script id="serviceGroupTemplate" type="text/x-handlebars-template">
+        <div class="service-group">
+            <div class="service-group-header">
+                <h3 class="mt-3 mb-1">{{Name}}</h3>
+            </div>
+            <div class="service-group-details">
+                <div class="services">
+                    {{#each Services}}
+                        <div class="service-row">
+                            <div class="row">
+                                <div class="service-left d-flex align-items-center">
+                                    <div class="text-black">
+                                        {{this.Name}}
+                                    </div>
+
+                                </div>
+                                <div class="service-right">
+                                    <div class="d-flex align-items-center justify-content-between">
+                                        <div>
+                                            <p class="fs-6 fw-600 text-gray-700 lh-sm">
+                                                {{this.PriceGross}} <span>zł</span>
+                                            </p>
+                                            <div>
+                                                <p class="fs-8 text-gray-600 lh-sm">
+                                                    {{this.DurationTimeInMinutes}} min
+                                                </p>
+                                            </div>
+                                        </div>
+                                        <div>
+                                            <a class="btn btn-primary" data-book-service="{{this.Id}}">
+                                                Umów
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    {{/each}}
+                </div>
+            </div>
+        </div>
+    </script>
+
+    <script id="calendarTemplate" type="text/x-handlebars-template">
+        <div class="month-name">
+            <a data-calendar-date="{{prevMonthDate}}" class="{{prevMonthClass}}">&lt;</a>
+                {{dateString}}
+            <a data-calendar-date="{{nextMonthDate}}" class="cursor-pointer">&gt;</a>
+        </div>
+        
+        <div class="calendar-month">
+            <div class="calendar-row">
+                <div class="day day-of-week">
+                    pon.
+                </div>
+                <div class="day day-of-week">
+                    wt.
+                </div>
+                <div class="day day-of-week">
+                    śr.
+                </div>
+                <div class="day day-of-week">
+                    czw.
+                </div>
+                <div class="day day-of-week">
+                    pt.
+                </div>
+                <div class="day day-of-week">
+                    sob.
+                </div>
+                <div class="day day-of-week">
+                    niedz.
+                </div>
+            </div>  
+
+            {{{innerHtml}}}
+        </div>
+        
+        <div class="calendar-legend">
+            <div class="d-flex">
+            <span class="legend-color bg-available"></span> 
+            <span class="legend-name">dostępne</span>
+            <span class="legend-color bg-unavailable"></span>
+            <span class="legend-name">niedostępne</span>
+        </div>
+    </script>
+
+    <!-- Include jQuery and Handlebars -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.3/jquery.validate.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.7.7/handlebars.min.js"></script>
+
+    <!-- Include Bootstrap JS (including Popper.js for Bootstrap) -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+    <!-- Your custom JavaScript -->
+
+    <script src="scripts/api.js"></script>
+
+    <script src="scripts/js-prototypes.js"></script>
+    <script src="scripts/jquery.extensions.js"></script>
+    <script src="scripts/alert.js"></script>
+    <script src="scripts/app.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,32 @@
+
+#alerts {
+    position: fixed;
+    bottom: 50px;
+    right: 20px;
+    width: 22em;
+    max-width: calc(100% - 40px);
+    z-index: 1063;
+
+    .toast {
+        color: black;  
+        font-size: 14px;
+        padding: .5rem 1rem;
+        margin: 0 0 10px;
+        /*box-shadow: rgba(0, 0, 0, 0.15) 0px 8px 1;*/
+
+        .toast-body {
+            display: flex;
+            align-items: center;
+            padding: 0;
+        }
+
+        i {
+            font-size: 2rem;
+            padding-right: 1rem;
+        }
+
+        .btn-close {
+            color: inherit !important;
+        }
+    }
+}
