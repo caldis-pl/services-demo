@@ -1,5 +1,5 @@
 var caldisApi = (function () {
-    const rootUrl =  "http://localhost/caldis/api/v1";
+    const rootUrl =  "https://caldis.pl/api/v1";
     const apiKey = "";
 
     if(!apiKey){
