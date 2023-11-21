@@ -60,3 +60,75 @@
   Kody źródłowe z repozytorium, pokazują w jaki sposób wykonać zapytania REST – jak pobrać kalendarze, jak sprawdzić czy są dostępne terminy oraz jak dokonać rezerwacji.	
   Jeśli masz jakiekolwiek wątpliwości lub pytania, napisz do nas: <a href="mailto:pomoc@caldis.pl">pomoc@caldis.pl</a>. 
 </p>
+
+<h3>
+  Pobieranie usług (pogrupowanych według kategorii)
+</h3>
+
+```js
+caldisApi
+    .getServiceGroups()
+    .then((groups) => {
+        console.log(groups)
+    })
+    .catch((reason) => {
+        console.log(reason);
+    })
+```
+
+<h3>
+  Pobieranie szczegółów usługi
+</h3>
+
+```js
+var json = {
+    IdService: "PASTE GUID HERE",
+};
+caldisApi.getServiceDetails(json)
+    .then((serviceDetails) => {
+        console.log(serviceDetails);
+    })
+    .catch((reason) => {
+        console.log(reason);
+    });
+```
+<h3>Sprawdzanie dostępnych dat</h3>
+
+```js
+ caldisApi.getServicesAvailabilityForMonth({
+      idServices: "SERVICE GUID",
+      idCalendar: "CALENDAR GUID",
+      date: new Date()
+  }).then((availableDates) => {
+      console.log(availableDates);
+  })
+  .catch((reason) => {
+      console.log(reason);
+  });
+```
+<h3>Sprawdzanie dostępnych godzin</h3>
+
+```js
+ caldisApi.getServicesAvailabilityHours({
+      idServices: "SERVICE GUID,
+      idCalendar: "CALDENAR GUID",
+      date: new Date()
+  }).then((data) => {
+      console.log(data);
+  })
+  .catch((reason) => {
+      console.log(reason);
+  });
+```
+
+<h3>Dodawanie rezerwacji</h3>
+
+```js
+caldisApi.addServiceReservation(json)
+    .then((response) => {
+        console.log(response);
+    })
+    .catch((reason) => {
+        console.log(reason);
+    });
+```
